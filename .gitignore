@@ -36,3 +36,7 @@ build/**/*
 out/**/*
 .vs/**/*
 .vscode/**/*
+
+
+docs/
+*.DS_Store
