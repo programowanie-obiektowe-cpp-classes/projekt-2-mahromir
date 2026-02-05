@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 # Project name and C++ standard
 project(Integrator VERSION 1.0 LANGUAGES CXX)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add include directory
@@ -11,8 +11,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 set(EXEC_NAME "app")
 
-add_subdirectory(libs)
-add_subdirectory(src)
+# add_executable(${EXEC_NAME} "src/main.cpp")
 
+macro(defProblem name source)
+    add_executable("${name}" "${source}" "src/main.cpp")
+    set_target_properties("${name}" PROPERTIES CXX_STANDARD 23)
+    target_include_directories("${name}" PUBLIC include)
+endmacro()
 
-
+defProblem(zad1 src/zad1.cpp)
+defProblem(zad2 src/zad2.cpp)
