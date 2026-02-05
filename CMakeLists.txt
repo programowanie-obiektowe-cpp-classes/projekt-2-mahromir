@@ -21,3 +21,4 @@ endmacro()
 
 defProblem(zad1 src/zad1.cpp)
 defProblem(zad2 src/zad2.cpp)
+defProblem(zad3 src/zad3.cpp)
