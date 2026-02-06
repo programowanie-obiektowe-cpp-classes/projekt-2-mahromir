@@ -33,7 +33,7 @@ TEST_CASE("Day2 - 2025", "[zad2]"){
     
         if (range.empty()) continue;
 
-        int dash = range.find('-');
+        int dash = range.find('-'); 
         long long start = std::stoll(range.substr(0, dash));
         long long end = std::stoll(range.substr(dash + 1));
 
